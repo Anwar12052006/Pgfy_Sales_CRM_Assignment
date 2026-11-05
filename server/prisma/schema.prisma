@@ -1,0 +1,186 @@
+// PGfy Sales CRM & Call Tracking - Database Schema
+// Prisma 6 with PostgreSQL
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==========================================
+// ENUMS
+// ==========================================
+
+enum Role {
+  ADMIN
+  SALES_EXECUTIVE
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  INTERESTED
+  NOT_INTERESTED
+  FOLLOW_UP
+  VISIT_SCHEDULED
+  CONVERTED
+  LOST
+}
+
+enum CallOutcome {
+  CONNECTED
+  NOT_ANSWERED
+  BUSY
+  SWITCHED_OFF
+  INTERESTED
+  NOT_INTERESTED
+  CALL_BACK_REQUESTED
+  VISIT_SCHEDULED
+  CONVERTED
+}
+
+enum FollowUpStatus {
+  PENDING
+  COMPLETED
+  CANCELLED
+}
+
+// ==========================================
+// MODELS
+// ==========================================
+
+/// System users: Administrators and Sales Executives
+model User {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String   @db.VarChar(100)
+  email     String   @unique @db.VarChar(255)
+  password  String   @db.VarChar(255)
+  role      Role     @default(SALES_EXECUTIVE)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Current lead assignments where user is the active executive
+  assignedLeads Lead[] @relation("LeadAssignedExecutive")
+
+  // Historical assignment audit records
+  executiveAssignments LeadAssignment[] @relation("AssignmentExecutive")
+  createdAssignments    LeadAssignment[] @relation("AssignmentAssignedBy")
+
+  // Immutable activity logs
+  calls     Call[]     @relation("ExecutiveCalls")
+  followUps FollowUp[] @relation("ExecutiveFollowUps")
+
+  @@index([role])
+  @@index([isActive])
+  @@map("users")
+}
+
+/// CRM Leads representing prospective student / professional PG tenants
+model Lead {
+  id                  String     @id @default(uuid()) @db.Uuid
+  customerName        String     @db.VarChar(150)
+  mobileNumber        String     @db.VarChar(20)
+  email               String?    @db.VarChar(255)
+  propertyCategory    String     @db.VarChar(100)
+  preferredLocation   String     @db.VarChar(255)
+  budget              Decimal    @db.Decimal(12, 2)
+  leadSource          String     @db.VarChar(100)
+  status              LeadStatus @default(NEW)
+  enquiryDate         DateTime   @default(now())
+  assignedExecutiveId String?    @db.Uuid
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime   @updatedAt
+
+  // Relation to currently assigned executive (nullable for unassigned leads)
+  assignedExecutive User? @relation("LeadAssignedExecutive", fields: [assignedExecutiveId], references: [id], onDelete: SetNull)
+
+  // Complete assignment history (reassignments add new records without destroying previous)
+  assignments LeadAssignment[]
+
+  // Activity logs
+  calls     Call[]
+  followUps FollowUp[]
+
+  @@index([status])
+  @@index([assignedExecutiveId])
+  @@index([mobileNumber])
+  @@index([enquiryDate])
+  @@index([createdAt])
+  @@map("leads")
+}
+
+/// Historical ledger of lead assignments to executives
+model LeadAssignment {
+  id           String    @id @default(uuid()) @db.Uuid
+  leadId       String    @db.Uuid
+  executiveId  String    @db.Uuid
+  assignedById String    @db.Uuid
+  assignedAt   DateTime  @default(now())
+  unassignedAt DateTime?
+
+  // Relations
+  lead        Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  executive   User @relation("AssignmentExecutive", fields: [executiveId], references: [id], onDelete: Restrict)
+  assignedBy  User @relation("AssignmentAssignedBy", fields: [assignedById], references: [id], onDelete: Restrict)
+
+  @@index([leadId])
+  @@index([executiveId])
+  @@index([assignedById])
+  @@index([assignedAt])
+  @@map("lead_assignments")
+}
+
+/// Immutable record of phone calls conducted by sales executives
+model Call {
+  id              String      @id @default(uuid()) @db.Uuid
+  leadId          String      @db.Uuid
+  executiveId     String      @db.Uuid
+  callDateTime    DateTime    @default(now())
+  durationSeconds Int
+  outcome         CallOutcome
+  notes           String?     @db.Text
+  createdAt       DateTime    @default(now())
+
+  // Relations
+  lead      Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  executive User @relation("ExecutiveCalls", fields: [executiveId], references: [id], onDelete: Restrict)
+
+  // Follow-ups scheduled or linked to this call
+  followUps FollowUp[]
+
+  @@index([callDateTime])
+  @@index([leadId])
+  @@index([executiveId])
+  @@index([outcome])
+  @@map("calls")
+}
+
+/// Scheduled tasks and reminders for lead follow-ups
+model FollowUp {
+  id           String         @id @default(uuid()) @db.Uuid
+  leadId       String         @db.Uuid
+  executiveId  String         @db.Uuid
+  callId       String?        @db.Uuid
+  dueAt        DateTime
+  status       FollowUpStatus @default(PENDING)
+  notes        String?        @db.Text
+  completedAt  DateTime?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  // Relations
+  lead      Lead  @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  executive User  @relation("ExecutiveFollowUps", fields: [executiveId], references: [id], onDelete: Restrict)
+  call      Call? @relation(fields: [callId], references: [id], onDelete: SetNull)
+
+  @@index([dueAt])
+  @@index([leadId])
+  @@index([executiveId])
+  @@index([status])
+  @@map("follow_ups")
+}

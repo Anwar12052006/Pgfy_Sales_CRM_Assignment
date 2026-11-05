@@ -1,0 +1,54 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "prisma:seed": "tsx prisma/seed.ts",
+    "verify:seed": "tsx scripts/verify-seed.ts",
+    "test:auth": "tsx scripts/test-auth.ts",
+    "test:leads": "tsx scripts/test-leads.ts",
+    "test:dashboard": "tsx scripts/test-dashboard.ts",
+    "test:calls": "tsx scripts/test-calls.ts",
+    "test:followups": "tsx scripts/test-followups.ts",
+    "test:reports": "tsx scripts/test-reports.ts",
+    "test:lifecycle": "tsx scripts/test-e2e-lifecycle.ts",
+    "test:audit": "tsx scripts/final-qa-security-audit.ts",
+    "test": "npm run test:auth && npm run test:leads && npm run test:dashboard && npm run test:calls && npm run test:followups && npm run test:reports && npm run test:lifecycle && npm run test:audit"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^4.22.3",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.12.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^26.6.6",
+    "prisma": "^6.19.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

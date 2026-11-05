@@ -1,0 +1,55 @@
+﻿Call ID,Customer Name,Customer Mobile,Executive Name,Call Date and Time,Duration,Call Outcome,Call Notes,Next Follow-up Date
+6040a35c-51b5-46a8-83f7-49f6cfa13cae,anwar,9115522220,Rohan Sharma (Demo Executive),2026-11-05T02:50:00.000Z,0s,CONNECTED,price concern,2026-11-10T05:53:00.000Z
+bbe7de80-7c59-40ec-84a5-a33f0070e31d,Vikramaditya Rao 301411,9876301411,Rohan Sharma (Demo Executive),2026-11-03T04:15:01.568Z,240s,INTERESTED,"Customer is very interested, discussed 3 BHK units near Sony World signal.",N/A
+20000000-0000-0000-0000-000000000042,Tanvi Sen,9845011020,Rohan Sharma (Demo Executive),2026-11-02T22:58:20.445Z,85s,CONNECTED,Connected with lead. Verified preferred budget and move-in timeline.,N/A
+20000000-0000-0000-0000-000000000003,Aarav Patel,9845011001,Rohan Sharma (Demo Executive),2026-11-02T02:58:20.445Z,140s,CALL_BACK_REQUESTED,Customer requested a callback regarding agreement lease clause and security deposit refund policy.,2026-11-03T05:30:00.000Z
+20000000-0000-0000-0000-000000000041,Tanvi Sen,9845011020,Rohan Sharma (Demo Executive),2026-11-02T01:58:20.445Z,0s,NOT_ANSWERED,Initial contact call for Marathahalli 2 BHK web inquiry.,N/A
+20000000-0000-0000-0000-000000000018,Aditi Rao,9845011008,Rohan Sharma (Demo Executive),2026-11-02T01:58:20.445Z,130s,INTERESTED,Reviewing lease terms. Scheduled follow-up for property visit.,2026-11-20T07:33:00.000Z
+20000000-0000-0000-0000-000000000036,Siddharth Roy,9845011017,Priya Verma (Sales Executive 2),2026-11-02T00:58:20.445Z,215s,VISIT_SCHEDULED,Site visit scheduled for weekend with executive accompaniment.,2026-11-04T22:29:59.999Z
+20000000-0000-0000-0000-000000000040,Arjun Verma,9845011019,Rohan Sharma (Demo Executive),2026-11-01T23:58:20.445Z,0s,BUSY,Second retry for unassigned lead. Prospect was busy.,N/A
+20000000-0000-0000-0000-000000000026,Nandini Dasgupta,9845011012,Rohan Sharma (Demo Executive),2026-11-01T23:58:20.445Z,150s,CONNECTED,Customer looking for 1 BHK in Indiranagar within walking distance of Metro station.,N/A
+20000000-0000-0000-0000-000000000044,Varun Kapoor,9845011021,Priya Verma (Sales Executive 2),2026-11-01T02:58:20.445Z,70s,CONNECTED,Customer confirmed requirement. Ready to be assigned to dedicated executive.,N/A
+20000000-0000-0000-0000-000000000007,Sneha Reddy,9845011003,Rohan Sharma (Demo Executive),2026-11-01T02:58:20.445Z,240s,VISIT_SCHEDULED,Confirmed in-person property tour for this weekend at Bellandur complex.,2026-11-04T22:29:59.999Z
+20000000-0000-0000-0000-000000000025,Nandini Dasgupta,9845011012,Rohan Sharma (Demo Executive),2026-11-01T01:58:20.445Z,0s,NOT_ANSWERED,Customer did not pick up outbound call. Will retry.,N/A
+20000000-0000-0000-0000-000000000039,Arjun Verma,9845011019,Rohan Sharma (Demo Executive),2026-11-01T01:58:20.445Z,0s,NOT_ANSWERED,Inbound web lead qualification call. Line rang out.,N/A
+20000000-0000-0000-0000-000000000020,Rajeshwari Kulkarni,9845011009,Rohan Sharma (Demo Executive),2026-11-01T00:58:20.445Z,170s,VISIT_SCHEDULED,Confirmed site inspection for tomorrow with family members.,N/A
+20000000-0000-0000-0000-000000000028,Rahul Sharma,9845011013,Rohan Sharma (Demo Executive),2026-10-31T22:58:20.445Z,125s,CONNECTED,Connected with prospect. Discussed studio options on 100ft road Indiranagar.,N/A
+20000000-0000-0000-0000-000000000009,Rohan Nair,9845011004,Rohan Sharma (Demo Executive),2026-10-31T21:58:20.445Z,110s,INTERESTED,Prospect comparing 2 shortlisted properties. Follow-up scheduled.,2026-11-06T20:29:59.999Z
+20000000-0000-0000-0000-000000000035,Siddharth Roy,9845011017,Priya Verma (Sales Executive 2),2026-10-31T01:58:20.445Z,185s,CONNECTED,Luxury Villa enquiry in Indiranagar Defence Colony.,N/A
+20000000-0000-0000-0000-000000000043,Varun Kapoor,9845011021,Priya Verma (Sales Executive 2),2026-10-31T01:58:20.445Z,0s,SWITCHED_OFF,Initial dial for Koramangala studio lead.,N/A
+20000000-0000-0000-0000-000000000027,Rahul Sharma,9845011013,Rohan Sharma (Demo Executive),2026-10-31T00:58:20.445Z,0s,BUSY,"Attempted outbound call. Line was busy, will retry in afternoon.",N/A
+20000000-0000-0000-0000-000000000046,Sanjay Ghosh,9845011022,Rohan Sharma (Demo Executive),2026-10-30T23:58:20.445Z,95s,CONNECTED,Customer verified Whitefield 3 BHK requirement.,N/A
+20000000-0000-0000-0000-000000000017,Aditi Rao,9845011008,Rohan Sharma (Demo Executive),2026-10-30T23:58:20.445Z,155s,CONNECTED,Enquired about 2 BHK apartment in Hebbal near Manyata Tech Park.,N/A
+20000000-0000-0000-0000-000000000030,Meera Joshi,9845011014,Priya Verma (Sales Executive 2),2026-10-30T23:58:20.445Z,0s,BUSY,"Customer was busy in meeting, asked to call back next week.",N/A
+20000000-0000-0000-0000-000000000032,Amit Deshmukh,9845011015,Priya Verma (Sales Executive 2),2026-10-30T02:58:20.445Z,190s,INTERESTED,Client reviewed photos. Keen on gated society with gym.,N/A
+20000000-0000-0000-0000-000000000050,Nikhil Nair,9845011024,Rohan Sharma (Demo Executive),2026-10-30T02:58:20.445Z,130s,CONNECTED,Yelahanka Villa lead verified.,N/A
+20000000-0000-0000-0000-000000000045,Sanjay Ghosh,9845011022,Rohan Sharma (Demo Executive),2026-10-30T01:58:20.445Z,0s,NOT_ANSWERED,Walk-in follow up verification.,N/A
+20000000-0000-0000-0000-000000000024,Kunal Singhania,9845011011,Rohan Sharma (Demo Executive),2026-10-30T01:58:20.445Z,185s,CONNECTED,Prospect reached. Discussed 2 BHK options in HSR Layout Sector 1.,N/A
+20000000-0000-0000-0000-000000000006,Sneha Reddy,9845011003,Rohan Sharma (Demo Executive),2026-10-30T01:58:20.445Z,190s,CONNECTED,Discussed 2 BHK semi-furnished property in Bellandur near Green Glen Layout.,N/A
+20000000-0000-0000-0000-000000000048,Swati Kulkarni,9845011023,Priya Verma (Sales Executive 2),2026-10-30T01:58:20.445Z,110s,CONNECTED,Hebbal requirement confirmed.,N/A
+20000000-0000-0000-0000-000000000038,Neha Choudhury,9845011018,Priya Verma (Sales Executive 2),2026-10-29T23:58:20.445Z,120s,INTERESTED,Client considering options. Waiting for decision from spouse.,2026-11-20T08:34:00.000Z
+20000000-0000-0000-0000-000000000014,Karthik Subramanian,9845011006,Rohan Sharma (Demo Executive),2026-10-29T22:58:20.445Z,175s,INTERESTED,Shared floor plans and clubhouse brochure. Family will visit over weekend.,N/A
+20000000-0000-0000-0000-000000000049,Nikhil Nair,9845011024,Rohan Sharma (Demo Executive),2026-10-29T01:58:20.445Z,0s,NOT_ANSWERED,99acres portal lead dial.,N/A
+20000000-0000-0000-0000-000000000047,Swati Kulkarni,9845011023,Priya Verma (Sales Executive 2),2026-10-29T00:58:20.445Z,0s,BUSY,Qualification call attempted.,N/A
+20000000-0000-0000-0000-000000000012,Pooja Hegde,9845011005,Rohan Sharma (Demo Executive),2026-10-29T00:58:20.445Z,275s,CONVERTED,Rental agreement signed and token advance transferred. Successfully converted!,2026-10-28T23:58:20.591Z
+20000000-0000-0000-0000-000000000052,Shreya Nambiar,9845011025,Priya Verma (Sales Executive 2),2026-10-28T23:58:20.445Z,105s,CONNECTED,Electronic City 1 BHK verified.,N/A
+20000000-0000-0000-0000-000000000002,Aarav Patel,9845011001,Rohan Sharma (Demo Executive),2026-10-28T23:58:20.445Z,210s,INTERESTED,Customer reviewed video walkthrough. Very interested in 2nd floor balcony unit. Budget fits.,N/A
+20000000-0000-0000-0000-000000000019,Rajeshwari Kulkarni,9845011009,Rohan Sharma (Demo Executive),2026-10-28T22:58:20.445Z,195s,CONNECTED,Looking for 3 BHK in Yelahanka near international airport corridor.,N/A
+20000000-0000-0000-0000-000000000051,Shreya Nambiar,9845011025,Priya Verma (Sales Executive 2),2026-10-28T01:58:20.445Z,0s,SWITCHED_OFF,Number not reachable on initial attempt.,N/A
+20000000-0000-0000-0000-000000000005,Ananya Iyer,9845011002,Priya Verma (Sales Executive 2),2026-10-28T00:58:20.445Z,160s,INTERESTED,Shared rent details and maintenance inclusions in HSR Layout.,N/A
+20000000-0000-0000-0000-000000000008,Rohan Nair,9845011004,Rohan Sharma (Demo Executive),2026-10-27T23:58:20.445Z,180s,CONNECTED,Detailed discussion regarding 3 BHK flat near ITPL Whitefield with dedicated car parking.,N/A
+20000000-0000-0000-0000-000000000029,Meera Joshi,9845011014,Priya Verma (Sales Executive 2),2026-10-27T01:58:20.445Z,115s,CONNECTED,Customer interested in 1 BHK single occupancy in Koramangala.,2026-11-03T09:30:00.000Z
+20000000-0000-0000-0000-000000000023,Kunal Singhania,9845011011,Rohan Sharma (Demo Executive),2026-10-27T00:58:20.445Z,0s,SWITCHED_OFF,Mobile number switched off. Left SMS reminder.,N/A
+20000000-0000-0000-0000-000000000037,Neha Choudhury,9845011018,Priya Verma (Sales Executive 2),2026-10-26T01:58:20.445Z,145s,CONNECTED,3 BHK enquiry in Sarjapur Road for working couple.,N/A
+20000000-0000-0000-0000-000000000001,Aarav Patel,9845011001,Rohan Sharma (Demo Executive),2026-10-26T01:58:20.445Z,165s,CONNECTED,Introductory call. Enquired about 1 BHK close to Koramangala 5th Block Sony World junction.,N/A
+20000000-0000-0000-0000-000000000031,Amit Deshmukh,9845011015,Priya Verma (Sales Executive 2),2026-10-25T00:58:20.445Z,140s,CONNECTED,Software engineer looking for 2 BHK near Electronic City Wipro Gate.,N/A
+20000000-0000-0000-0000-000000000013,Karthik Subramanian,9845011006,Rohan Sharma (Demo Executive),2026-10-25T00:58:20.445Z,220s,CONNECTED,Gated community Villa enquiry on Sarjapur Road. High budget client.,N/A
+20000000-0000-0000-0000-000000000016,Divya Venkatesh,9845011007,Rohan Sharma (Demo Executive),2026-10-24T02:58:20.445Z,65s,NOT_INTERESTED,Client relocated to Hyderabad for job change. Marked as not interested.,2026-10-26T01:58:20.591Z
+20000000-0000-0000-0000-000000000004,Ananya Iyer,9845011002,Priya Verma (Sales Executive 2),2026-10-24T01:58:20.445Z,135s,CONNECTED,Enquired about 2 BHK furnished flat in HSR Sector 6.,N/A
+20000000-0000-0000-0000-000000000011,Pooja Hegde,9845011005,Rohan Sharma (Demo Executive),2026-10-22T02:58:20.445Z,310s,VISIT_SCHEDULED,"Completed property inspection, client liked room lighting and security amenities.",N/A
+20000000-0000-0000-0000-000000000034,Kavita Pillai,9845011016,Priya Verma (Sales Executive 2),2026-10-22T02:58:20.445Z,260s,CONVERTED,Token advance received. Successfully converted into active rental booking.,2026-10-22T00:58:20.591Z
+20000000-0000-0000-0000-000000000015,Divya Venkatesh,9845011007,Rohan Sharma (Demo Executive),2026-10-20T01:58:20.445Z,90s,CONNECTED,Enquired about Marathahalli studio apartment.,N/A
+20000000-0000-0000-0000-000000000033,Kavita Pillai,9845011016,Priya Verma (Sales Executive 2),2026-10-18T01:58:20.445Z,220s,CONNECTED,Studio apartment enquiry in HSR Layout.,N/A
+20000000-0000-0000-0000-000000000022,Vikram Malhotra,9845011010,Rohan Sharma (Demo Executive),2026-10-17T23:58:20.445Z,85s,NOT_INTERESTED,Found property through independent broker. Closed enquiry as lost.,2026-10-19T00:58:20.591Z
+20000000-0000-0000-0000-000000000010,Pooja Hegde,9845011005,Rohan Sharma (Demo Executive),2026-10-16T01:58:20.445Z,200s,CONNECTED,Enquired about 1 BHK near Electronic City Phase 1 Infosys gate.,N/A
+20000000-0000-0000-0000-000000000021,Vikram Malhotra,9845011010,Rohan Sharma (Demo Executive),2026-10-12T01:58:20.445Z,140s,CONNECTED,Looking for 4 BHK in Whitefield.,N/A
