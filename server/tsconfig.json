@@ -1,35 +1,72 @@
+// {
+//   "compilerOptions": {
+//     /* Environment Settings */
+//     "module": "nodenext",
+//     "moduleResolution": "nodenext",
+//     "target": "es2022",
+//     "lib": ["es2022"],
+//     "types": ["node"],
+//     /* Output — tsx handles dev execution; tsc only used for type-checking */
+//     "noEmit": true,
+//     "sourceMap": true,
+//     /* Strict Typechecking */
+//     "strict": true,
+//     "noUncheckedIndexedAccess": true,
+//     "noImplicitReturns": true,
+//     "noFallthroughCasesInSwitch": true,
+//     "forceConsistentCasingInFileNames": true,
+//     /* Module */
+//     "esModuleInterop": true,
+//     "isolatedModules": true,
+//     "moduleDetection": "force",
+//     "skipLibCheck": true,
+//     "resolveJsonModule": true,
+//     /* Path Aliases */
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   },
+//   "include": ["src/**/*.ts", "generated/**/*.ts"],
+//   "exclude": ["node_modules", "dist", "prisma"]
+// }
 {
   "compilerOptions": {
-    /* Environment Settings */
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "target": "es2022",
-    "lib": ["es2022"],
-    "types": ["node"],
-
-    /* Output — tsx handles dev execution; tsc only used for type-checking */
-    "noEmit": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "lib": [
+      "ES2022"
+    ],
+    "types": [
+      "node"
+    ],
+    "rootDir": ".",
+    "outDir": "./dist",
+    "noEmit": false,
     "sourceMap": true,
-
-    /* Strict Typechecking */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-
-    /* Module */
     "esModuleInterop": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
     "resolveJsonModule": true,
-
-    /* Path Aliases */
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["src/**/*.ts", "generated/**/*.ts"],
-  "exclude": ["node_modules", "dist", "prisma"]
+  "include": [
+    "src/**/*.ts",
+    "generated/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "prisma"
+  ]
 }
