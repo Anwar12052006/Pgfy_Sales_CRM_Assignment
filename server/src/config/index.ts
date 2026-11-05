@@ -1,8 +1,22 @@
 import dotenv from 'dotenv';
 import path from 'node:path';
+import fs from 'node:fs';
 
-// Load .env from server root
-dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+// Load .env from process.cwd() or relative path (handles both src/ and dist/)
+const envCandidates = [
+  path.resolve(process.cwd(), '.env'),
+  path.resolve(__dirname, '../../../.env'), // compiled: dist/src/config -> server root
+  path.resolve(__dirname, '../../.env'),    // development: src/config -> server root
+];
+
+for (const envPath of envCandidates) {
+  if (fs.existsSync(envPath)) {
+    dotenv.config({ path: envPath });
+    break;
+  }
+}
+// Fallback for containerized/platform-injected environments
+dotenv.config();
 
 interface Config {
   // Server

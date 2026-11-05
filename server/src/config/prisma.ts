@@ -1,4 +1,4 @@
-import { PrismaClient, Prisma, Role, LeadStatus, CallOutcome, FollowUpStatus } from '../../generated/prisma/client.js';
+import { PrismaClient, Prisma, Role, LeadStatus, CallOutcome, FollowUpStatus } from '@prisma/client';
 
 // Global singleton declaration to avoid multiple client instances during hot-reloads
 const globalForPrisma = globalThis as unknown as {
