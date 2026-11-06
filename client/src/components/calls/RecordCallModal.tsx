@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   PhoneCall,
   AlertCircle,
@@ -158,7 +159,19 @@ export const RecordCallModal: React.FC<RecordCallModalProps> = ({
       onSuccess(createdCall);
       onClose();
     } catch (err: unknown) {
-      setErrorMessage(err instanceof Error ? err.message : 'Failed to record call');
+      if (axios.isAxiosError(err)) {
+        const resData = err.response?.data as { message?: string; errors?: Array<{ field?: string; message: string }> } | undefined;
+        if (resData?.errors && resData.errors.length > 0) {
+          const detail = resData.errors.map((e) => e.message || e.field).join(', ');
+          setErrorMessage(detail || resData.message || 'Validation error occurred.');
+        } else if (resData?.message) {
+          setErrorMessage(resData.message);
+        } else {
+          setErrorMessage(err.message || 'Failed to record call');
+        }
+      } else {
+        setErrorMessage(err instanceof Error ? err.message : 'Failed to record call');
+      }
     } finally {
       setIsSubmitting(false);
     }

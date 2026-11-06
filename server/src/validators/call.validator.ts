@@ -1,11 +1,14 @@
 import { z } from 'zod';
 import { CallOutcome } from '../config/prisma.js';
 
+// Accepts standard RFC UUIDs (v1-v8) and 128-bit database UUID representations (8-4-4-4-12 hex)
+export const UUID_REGEX = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+
 /**
  * Validation schema for recording an outbound call
  */
 export const recordCallSchema = z.object({
-  leadId: z.string().uuid('Lead ID must be a valid UUID'),
+  leadId: z.string().regex(UUID_REGEX, 'Lead ID must be a valid UUID'),
   callDateTime: z.coerce.date().optional(),
   durationSeconds: z.coerce
     .number()
@@ -39,8 +42,8 @@ export type RecordCallInput = z.infer<typeof recordCallSchema>;
  * Validation schema for querying and filtering call logs
  */
 export const queryCallsSchema = z.object({
-  leadId: z.string().uuid().optional(),
-  executiveId: z.string().uuid().optional(),
+  leadId: z.string().regex(UUID_REGEX, 'Lead ID must be a valid UUID').optional(),
+  executiveId: z.string().regex(UUID_REGEX, 'Executive ID must be a valid UUID').optional(),
   outcome: z.nativeEnum(CallOutcome).optional(),
   startDate: z.coerce.date().optional(),
   endDate: z.coerce.date().optional(),

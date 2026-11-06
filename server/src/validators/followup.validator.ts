@@ -1,11 +1,14 @@
 import { z } from 'zod';
 import { FollowUpStatus } from '../config/prisma.js';
 
+// Accepts standard RFC UUIDs (v1-v8) and 128-bit database UUID representations (8-4-4-4-12 hex)
+const UUID_REGEX = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+
 /**
  * Validation schema for scheduling a new follow-up
  */
 export const createFollowUpSchema = z.object({
-  leadId: z.string().uuid('Lead ID must be a valid UUID'),
+  leadId: z.string().regex(UUID_REGEX, 'Lead ID must be a valid UUID'),
   dueAt: z.coerce.date({
     message: 'dueAt must be a valid ISO Date string',
   }),
@@ -17,7 +20,7 @@ export const createFollowUpSchema = z.object({
     .nullable(),
   callId: z
     .string()
-    .uuid('Call ID must be a valid UUID')
+    .regex(UUID_REGEX, 'Call ID must be a valid UUID')
     .optional()
     .nullable(),
 });
@@ -62,8 +65,8 @@ export type RescheduleFollowUpInput = z.infer<typeof rescheduleFollowUpSchema>;
  * Validation schema for querying and filtering follow-up tasks
  */
 export const queryFollowUpsSchema = z.object({
-  leadId: z.string().uuid().optional(),
-  executiveId: z.string().uuid().optional(),
+  leadId: z.string().regex(UUID_REGEX, 'Lead ID must be a valid UUID').optional(),
+  executiveId: z.string().regex(UUID_REGEX, 'Executive ID must be a valid UUID').optional(),
   status: z.nativeEnum(FollowUpStatus).optional(),
   classification: z.enum(['today', 'upcoming', 'overdue', 'completed', 'cancelled']).optional(),
   startDate: z.coerce.date().optional(),
